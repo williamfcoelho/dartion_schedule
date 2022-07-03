@@ -1,3 +1,5 @@
+import 'package:teste_dartion/controller/schedule_barber_controller.dart';
+
 void main() {
   List<String> f = [];
   int minutesInitial = 0;
@@ -17,6 +19,9 @@ void main() {
 
   List<String> f3 = differenceFN(f, f2);
   print(f3);
+
+
+  ScheduleBarberController().finAll();
  
 }
 
