@@ -1,9 +1,9 @@
 {
     "schedule_barber": [
         {
-            "id": "0",
-            "id_barber": "1",
-            "schedule":[
+            "id": 0,
+            "id_barber": 1,
+            "schedules":[
                 {
                     "date":"03.07.22",
                     "hour":[
@@ -60,9 +60,9 @@
            
         },
         {
-            "id": "1",
-            "id_barber": "2",
-            "schedule":[
+            "id": 1,
+            "id_barber": 2,
+            "schedules":[
                 {
                     "date":"03.07.22",
                     "hour":[
@@ -119,9 +119,9 @@
            
         },
         {
-            "id": "2",
-            "id_barber": "3",
-            "schedule":[
+            "id": 2,
+            "id_barber": 3,
+            "schedules":[
                 {
                     "date":"03.07.22",
                     "hour":[
