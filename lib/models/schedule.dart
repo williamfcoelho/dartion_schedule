@@ -3,32 +3,30 @@ import 'dart:convert';
 
 class Schedule {
   String date;
-  String hours;
-
+  List<String> hour;
+  
   Schedule({
     required this.date,
-    required this.hours,
+    required this.hour,
   });
 
-  // toMap é um método que pega o objeto (Schedule) e transforma em um Map<String,dynamic>
+  
+
   Map<String, dynamic> toMap() {
-    return {
+    return <String, dynamic>{
       'date': date,
-      'hours': hours,
+      'hour': hour,
     };
   }
 
-  // fromMap é um CONSTRUTOR que vai pegar um MAP e transformar em um objeto Schedule
   factory Schedule.fromMap(Map<String, dynamic> map) {
     return Schedule(
-      date: map['date'] ?? 0,
-      hours: map['hours'] ?? '',
-    );
+      date: map['date'] as String,
+      hour: List<String>.from((map['hour']), 
+    ));
   }
 
-  // toJson é um método que retorna uma string json do meu abjeto Schedule
-  String toJson()=> jsonEncode(toMap());
+  String toJson() => json.encode(toMap());
 
-  // fromJson é um método que baseado em uma string json retorna um objeto Schedule
-  factory Schedule.fromJson(String json)=> Schedule.fromMap(jsonDecode(json)) ;
+  factory Schedule.fromJson(String source) => Schedule.fromMap(json.decode(source) as Map<String, dynamic>);
 }

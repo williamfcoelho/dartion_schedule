@@ -2,7 +2,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:teste_dartion/controller/schedule_barber_controller.dart';
 import 'package:teste_dartion/models/schedule_barber.dart';
+
 
 class SchedulesBarberRepository {
   Future <List<ScheduleBarber>> findAll() async{
@@ -11,7 +13,9 @@ class SchedulesBarberRepository {
 
     final scheduleList = jsonDecode(scheduleBarberResponse.body);
 
-    return scheduleList.map<ScheduleBarber>((scheduleMap){
+    print(scheduleList);
+
+     return scheduleList.map<ScheduleBarber>((scheduleMap){
       return ScheduleBarber.fromMap(scheduleMap);
     }).toList();
      

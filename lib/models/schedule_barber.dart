@@ -7,17 +7,17 @@ class ScheduleBarber {
   int id;
   int idBarber;
   List<Schedule> schedules;
+
   ScheduleBarber({
     required this.id,
     required this.idBarber,
     required this.schedules,
   });
 
-
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'idBarber': idBarber,
+      'id_barber': idBarber,
       'schedules': schedules.map((x) => x.toMap()).toList(),
     };
   }
@@ -25,12 +25,17 @@ class ScheduleBarber {
   factory ScheduleBarber.fromMap(Map<String, dynamic> map) {
     return ScheduleBarber(
       id: map['id'] as int,
-      idBarber: map['idBarber'] as int,
-      schedules: List<Schedule>.from((map['schedules'] as List<int>).map<Schedule>((x) => Schedule.fromMap(x as Map<String,dynamic>),),),
+      idBarber: map['id_barber'] as int,
+      schedules: List<Schedule>.from(
+        (map['schedules'] ).map<Schedule>(
+          (x) => Schedule.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory ScheduleBarber.fromJson(String source) => ScheduleBarber.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ScheduleBarber.fromJson(String source) =>
+      ScheduleBarber.fromMap(json.decode(source) as Map<String, dynamic>);
 }

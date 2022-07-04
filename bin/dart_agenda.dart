@@ -12,13 +12,13 @@ void main() {
       minutesInitial: minutesInitial,
       initialHour: initialHour,
       finalHour: finalHour);
-  print(f);
+ // print(f);
 
 // Lista vinda do banco de dados tabela agenda filtrando Barber, data e hora
   List<String> f2 = ['12:15', '12:30'];
 
   List<String> f3 = differenceFN(f, f2);
-  print(f3);
+//  print(f3);
 
 
   ScheduleBarberController().finAll();
