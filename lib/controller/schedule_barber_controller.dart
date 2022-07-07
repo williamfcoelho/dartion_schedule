@@ -10,4 +10,12 @@ class ScheduleBarberController {
 
     schedules.forEach((element) => print(element.idBarber));
   }
-}
+
+  Future<void> findById(int id) async {
+    
+    final barber = await _schedulesBarberRepository.findById(id);
+
+    print(barber);
+  }
+
+} 

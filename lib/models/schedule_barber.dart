@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:teste_dartion/models/schedule.dart';
 
 class ScheduleBarber {
-  int id;
+  String id;
   int idBarber;
   List<Schedule> schedules;
 
@@ -17,17 +17,17 @@ class ScheduleBarber {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'id_barber': idBarber,
+      'idBarber': idBarber,
       'schedules': schedules.map((x) => x.toMap()).toList(),
     };
   }
 
   factory ScheduleBarber.fromMap(Map<String, dynamic> map) {
     return ScheduleBarber(
-      id: map['id'] as int,
-      idBarber: map['id_barber'] as int,
+      id: map['id'] as String,
+      idBarber: map['idBarber'] as int,
       schedules: List<Schedule>.from(
-        (map['schedules'] ).map<Schedule>(
+        (map['schedules']).map<Schedule>(
           (x) => Schedule.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -38,4 +38,7 @@ class ScheduleBarber {
 
   factory ScheduleBarber.fromJson(String source) =>
       ScheduleBarber.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'ScheduleBarber(id: $id, idBarber: $idBarber, schedules: $schedules)';
 }

@@ -13,11 +13,17 @@ class SchedulesBarberRepository {
 
     final scheduleList = jsonDecode(scheduleBarberResponse.body);
 
-    print(scheduleList);
+    //print(scheduleList);
 
      return scheduleList.map<ScheduleBarber>((scheduleMap){
       return ScheduleBarber.fromMap(scheduleMap);
     }).toList();
-     
+  }
+
+  Future<ScheduleBarber> findById(int id) async{
+    final barberResponse = await http.get(Uri.parse('http://localhost:3031/schedule_barber/$id'));
+    final barberMap = jsonDecode(barberResponse.body);
+    
+    return ScheduleBarber.fromMap(barberMap);
   }
 }

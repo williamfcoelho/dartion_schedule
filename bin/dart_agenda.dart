@@ -21,7 +21,8 @@ void main() {
 //  print(f3);
 
 
-  ScheduleBarberController().finAll();
+  //ScheduleBarberController().finAll();
+  ScheduleBarberController().findById(2 );
  
 }
 

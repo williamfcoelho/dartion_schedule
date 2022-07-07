@@ -1,8 +1,8 @@
 {
     "schedule_barber": [
         {
-            "id": 0,
-            "id_barber": 1,
+            "id":"0",
+            "idBarber": 1,
             "schedules":[
                 {
                     "date":"03.07.22",
@@ -60,8 +60,8 @@
            
         },
         {
-            "id": 1,
-            "id_barber": 2,
+            "id": "1",
+            "idBarber": 2,
             "schedules":[
                 {
                     "date":"03.07.22",
@@ -119,8 +119,8 @@
            
         },
         {
-            "id": 2,
-            "id_barber": 3,
+            "id": "2",
+            "idBarber": 3,
             "schedules":[
                 {
                     "date":"03.07.22",
